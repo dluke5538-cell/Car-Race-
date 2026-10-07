@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Duke Racing — Mission 01</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="gate" class="screen">
+  <div class="panel">
+    <div class="logo">DUKE<span>RACING</span></div>
+    <p class="muted">PRIVATE TEST BUILD</p>
+    <h1>Mission 01</h1>
+    <p>Enter the private access code to play.</p>
+    <input id="code" type="password" placeholder="Access code" autocomplete="off">
+    <button id="unlock">ENTER RACE</button>
+    <p id="gateMsg" class="error"></p>
+  </div>
+</div>
+
+<main id="game" class="hidden">
+  <header>
+    <div><b>DUKE RACING</b><span>MISSION 01 · SOLO</span></div>
+    <button id="restart">RESTART</button>
+  </header>
+
+  <section class="hud">
+    <div><small>SPEED</small><strong id="speed">0</strong><em>KM/H</em></div>
+    <div><small>TIME</small><strong id="time">00:00.0</strong></div>
+    <div><small>CHECKPOINTS</small><strong id="cp">0/5</strong></div>
+  </section>
+
+  <section class="race-wrap">
+    <canvas id="canvas"></canvas>
+    <div id="mission" class="mission">
+      <b>MISSION 01</b>
+      <span>Complete the circuit through all 5 checkpoints.</span>
+    </div>
+    <div id="finish" class="finish hidden">
+      <div class="panel">
+        <div class="logo">DUKE<span>RACING</span></div>
+        <h2>MISSION COMPLETE</h2>
+        <p>Your time: <b id="finalTime">00:00.0</b></p>
+        <button id="again">RACE AGAIN</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="controls">
+    <button data-key="left">◀</button>
+    <button data-key="brake">BRAKE</button>
+    <button data-key="right">▶</button>
+    <button data-key="gas" class="gas">ACCELERATE</button>
+  </section>
+  <p class="help">Keyboard: W / ↑ accelerate · S / ↓ brake · A / ← and D / → steer</p>
+</main>
+<script src="game.js"></script>
+</body>
+</html>
